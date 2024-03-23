@@ -32,26 +32,6 @@ def generate_summary(teacher_feedback):
     # Generate summary
     summary = ' '.join(representative_sentences)
     return summary
-# Set page configuration
-st.set_page_config(
-    page_title="Student Feedback Analyzer",
-    page_icon=":bar_chart:",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #ccffcc /* Set your desired background color */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-col1, col2, col3 = st.columns([1, 6, 1])  # Adjust column widths as needed
-with col2:
-    st.image("C:/Users/DELL/Downloads/rce.jpg", width=200)
 
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
