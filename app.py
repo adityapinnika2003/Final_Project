@@ -51,7 +51,7 @@ st.markdown(
 )
 col1, col2, col3 = st.columns([1, 6, 1])  # Adjust column widths as needed
 with col2:
-    st.image("https://www.facebook.com/photo/?fbid=737077331758118&set=a.463904082408779", width=200)
+    st.image("https://www.facebook.com/photo/?fbid=737077331758118&set=a.463904082408779.jpg", width=200)
 
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
