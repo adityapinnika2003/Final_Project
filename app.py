@@ -37,7 +37,7 @@ st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
 
-csv=st.file_uploader('Enter CSV')
+csv=st.file_uploader('Upload Feedback File here')
 if csv:
     df = pd.read_csv(csv)
 # Load the dataset
