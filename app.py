@@ -43,7 +43,7 @@ st.markdown(
     """
     <style>
     body {
-        background-color: #87CEEB; /* Set your desired background color */
+        background-color: #ccffcc /* Set your desired background color */
     }
     </style>
     """,
