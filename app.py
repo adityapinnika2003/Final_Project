@@ -136,11 +136,11 @@ if csv:
 
 # Check if more than half of the reviews are negative
     if positive_count > total_reviews / 2:
-        print("Majority Students feedback on Teacher 1  is Positive.")
+        st.text("Majority Students feedback on Teacher 1  is Positive.")
     elif positive_count==negative_count:
-        print("Majority Students feedback on Teacher 1  is Neutral.")
+        st.text("Majority Students feedback on Teacher 1  is Neutral.")
     else:
-      print("Majority Students feedback on Teacher 1  is Negative.")
+        st.text("Majority Students feedback on Teacher 1  is Negative.")
         
    
     start_teacher = 1
