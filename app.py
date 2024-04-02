@@ -115,6 +115,7 @@ if st.button('Analyze'):
         df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
+        st.header('FEEDBACK ON TEACHERS: Positive/ Negative/Neutral')
     
         def sentiment_analyzer(score):
             if score > 0.049889:
