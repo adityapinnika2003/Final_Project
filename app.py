@@ -109,6 +109,11 @@ if csv:
     df['Processed_Feedback 3'] = df["Teacher 3"].apply(preprocess_text)
     df['Processed_Feedback 4'] = df["Teacher 4"].apply(preprocess_text)
     df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
+    df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
     def sentiment_analyzer(score):
         if score > 0.049889:
@@ -123,11 +128,6 @@ if csv:
     df['Sentiments 3'] = df['Sentiment_Scores 3'].apply(sentiment_analyzer)
     df['Sentiments 4'] = df['Sentiment_Scores 4'].apply(sentiment_analyzer)
     df['Sentiments 5'] = df['Sentiment_Scores 5'].apply(sentiment_analyzer)
-    df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
-    df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
-    df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
-    df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
-    df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
     total_reviews = len(df)
 
 # Count the number of negative sentiment labels
