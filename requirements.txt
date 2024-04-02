@@ -9,4 +9,3 @@ sentence_transformers
 textblob
 wordcloud
 xgboost
-"C:\\Users\\DELL\\Desktop\\1630655114525.jpeg"
