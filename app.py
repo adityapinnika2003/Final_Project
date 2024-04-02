@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import io
 from nltk.tokenize import sent_tokenize
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -71,14 +70,6 @@ def generate_summary(teacher_feedback):
 
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
-# Load your college logo image
-logo_path = "C:\\Users\\DELL\\Desktop\\1630655114525.jpeg"
-# Open the image file and read it as bytes
-with io.open(logo_path, 'rb') as f:
-    logo_bytes = f.read()
-# Display the logo image
-st.image(logo_bytes, caption='RCE', use_column_width=True)
-
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
     
 csv=st.file_uploader('Upload Feedback File here')
