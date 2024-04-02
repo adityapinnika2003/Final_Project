@@ -72,7 +72,7 @@ def generate_summary(teacher_feedback):
 custom_css = """
     <style>
         body {
-            background-color: #87CEEB; /* Sky blue color */
+            background-color: #0000FF; /* Sky blue color */
         }
     </style>
 """
