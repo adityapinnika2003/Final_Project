@@ -78,88 +78,51 @@ if csv:
 # Load the dataset
 # Specify the range of teachers to consider
     def preprocess_text(text):
-    # Convert to lowercase
-    text = text.lower()
+        text = text.lower()
 
     # Remove URLs, hashtags, mentions, and special characters
-    text = re.sub(r"http\S+|www\S+|@\w+|#\w+", "", text)
-    text = re.sub(r"[^\w\s]", "", text)
+        text = re.sub(r"http\S+|www\S+|@\w+|#\w+", "", text)
+        text = re.sub(r"[^\w\s]", "", text)
 
     # Remove numbers/digits
-    text = re.sub(r'\b[0-9]+\b\s*', '', text)
+        text = re.sub(r'\b[0-9]+\b\s*', '', text)
 
     # Remove punctuation
-    text = ''.join([char for char in text if char not in string.punctuation])
+        text = ''.join([char for char in text if char not in string.punctuation])
 
     # Tokenize the text
-    tokens = word_tokenize(text)
+        tokens = word_tokenize(text)
 
     # Remove stop words
-    stop_words = set(stopwords.words('english'))
-    tokens = [token for token in tokens if token not in stop_words]
+        stop_words = set(stopwords.words('english'))
+        tokens = [token for token in tokens if token not in stop_words]
 
     # Lemmatize the words
-    lemmatizer = WordNetLemmatizer()
-    tokens = [lemmatizer.lemmatize(token) for token in tokens]
+        lemmatizer = WordNetLemmatizer()
+        tokens = [lemmatizer.lemmatize(token) for token in tokens]
 
     # Join tokens back into a single string
-    return ' '.join(tokens)
+        return ' '.join(tokens)
 
-df['Processed_Feedback 1'] = df["Teacher 1"].apply(preprocess_text)
-df['Processed_Feedback 2'] = df["Teacher 2"].apply(preprocess_text)
-df['Processed_Feedback 3'] = df["Teacher 3"].apply(preprocess_text)
-df['Processed_Feedback 4'] = df["Teacher 4"].apply(preprocess_text)
-df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
-df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Processed_Feedback 1'] = df["Teacher 1"].apply(preprocess_text)
+    df['Processed_Feedback 2'] = df["Teacher 2"].apply(preprocess_text)
+    df['Processed_Feedback 3'] = df["Teacher 3"].apply(preprocess_text)
+    df['Processed_Feedback 4'] = df["Teacher 4"].apply(preprocess_text)
+    df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
 
-#print(df['Sentiment_Scores'].describe())
-st.text(df['Sentiment_Scores 1'])
-
-sns.histplot(df['Sentiment_Scores 1'])
-plt.title('Distribution of sentiment scores of Teacher 1')
-plt.ylabel('Frequency')
-plt.xlabel('Sentiment scores 1')
-plt.show()
-df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
-st.text(df['Sentiment_Scores 2'])
+    st.text(df['Sentiment_Scores 1'])
 
-sns.histplot(df['Sentiment_Scores 2'])
-plt.title('Distribution of sentiment scores of Teacher 2')
-plt.ylabel('Frequency')
-plt.xlabel('Sentiment scores 2')
-plt.show()
-df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
-
-#print(df['Sentiment_Scores'].describe())
-st.text(df['Sentiment_Scores 3'])
-
-sns.histplot(df['Sentiment_Scores 3'])
-plt.title('Distribution of sentiment scores of Teacher 3')
-plt.ylabel('Frequency')
-plt.xlabel('Sentiment scores 3')
-plt.show()
-df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
-
-#print(df['Sentiment_Scores'].describe())
-st.text(df['Sentiment_Scores 4'])
-
-sns.histplot(df['Sentiment_Scores 4'])
-plt.title('Distribution of sentiment scores of Teacher 4')
-plt.ylabel('Frequency')
-plt.xlabel('Sentiment scores 4')
-plt.show()
-df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
-
-#print(df['Sentiment_Scores'].describe())
-st.text(df['Sentiment_Scores 5'])
-
-sns.histplot(df['Sentiment_Scores 5'])
-plt.title('Distribution of sentiment scores of Teacher 5')
-plt.ylabel('Frequency')
-plt.xlabel('Sentiment scores 5')
-plt.show()
+    sns.histplot(df['Sentiment_Scores 1'])
+    plt.title('Distribution of sentiment scores of Teacher 1')
+    plt.ylabel('Frequency')
+    plt.xlabel('Sentiment scores 1')
+    plt.show()
+    df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
+        
+   
     start_teacher = 1
     end_teacher = 5  # Adjust as needed
     # Generate summary for each teacher in the specified range
