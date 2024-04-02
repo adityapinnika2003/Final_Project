@@ -70,12 +70,12 @@ def generate_summary(teacher_feedback):
 
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
-if st.button('Analyze'):
-    model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
     
-    csv=st.file_uploader('Upload Feedback File here')
-    if csv:
-        df = pd.read_csv(csv)
+csv=st.file_uploader('Upload Feedback File here')
+if csv:
+    df = pd.read_csv(csv)
+if st.button('Analyze'):
     # Load the dataset
     # Specify the range of teachers to consider
         def preprocess_text(text):
