@@ -73,9 +73,9 @@ st.title('STUDENT FEEDBACK ANALYZER')
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
     
 csv=st.file_uploader('Upload Feedback File here')
-if csv:
-    df = pd.read_csv(csv)
 if st.button('Analyze'):
+    if csv:
+    df = pd.read_csv(csv)
     # Load the dataset
     # Specify the range of teachers to consider
         def preprocess_text(text):
