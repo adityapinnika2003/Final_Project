@@ -67,21 +67,6 @@ def generate_summary(teacher_feedback):
     # Generate summary
     summary = ' '.join(representative_sentences)
     return summary
-
-# Custom CSS to change the background color to sky blue
-custom_css = """
-    <style>
-        body {
-            background-color: #0000FF !important; /* Sky blue color */
-        }
-    </style>
-"""
-
-# Display the custom CSS
-st.markdown(custom_css, unsafe_allow_html=True)
-
-# Your Streamlit app content goes here
-
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
