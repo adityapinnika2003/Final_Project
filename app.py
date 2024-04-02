@@ -71,7 +71,7 @@ def generate_summary(teacher_feedback):
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 # Load your college logo image
-logo_path = "C:\Users\DELL\Desktop\1630655114525.jpeg"
+logo_path = "C:\\Users\\DELL\\Desktop\\1630655114525.jpeg"
 # Display the logo image
 st.image(logo_path, caption='RCE', use_column_width=True)
 
