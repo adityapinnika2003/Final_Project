@@ -110,17 +110,32 @@ if csv:
     df['Processed_Feedback 4'] = df["Teacher 4"].apply(preprocess_text)
     df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
 
-    df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
+    def sentiment_analyzer(score):
+        if score > 0.049889:
+            return 'positive'
 
-#print(df['Sentiment_Scores'].describe())
-    st.text(df['Sentiment_Scores 1'])
+        elif score < 0.049889:
+            return 'negative'
+        else:
+            return 'neutral'
+    df['Sentiments 1'] = df['Sentiment_Scores 1'].apply(sentiment_analyzer)
+    df['Sentiments 2'] = df['Sentiment_Scores 2'].apply(sentiment_analyzer)
+    df['Sentiments 3'] = df['Sentiment_Scores 3'].apply(sentiment_analyzer)
+    df['Sentiments 4'] = df['Sentiment_Scores 4'].apply(sentiment_analyzer)
+    df['Sentiments 5'] = df['Sentiment_Scores 5'].apply(sentiment_analyzer)
+    total_reviews = len(df)
 
-    sns.histplot(df['Sentiment_Scores 1'])
-    plt.title('Distribution of sentiment scores of Teacher 1')
-    plt.ylabel('Frequency')
-    plt.xlabel('Sentiment scores 1')
-    plt.show()
-    df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
+# Count the number of negative sentiment labels
+    negative_count = df['Sentiments 1'].value_counts().get('negative', 0)
+    positive_count=  df['Sentiments 1'].value_counts().get('positive', 0)
+
+# Check if more than half of the reviews are negative
+    if positive_count > total_reviews / 2:
+        print("Majority Students feedback on Teacher 1  is Positive.")
+    elif positive_count==negative_count:
+        print("Majority Students feedback on Teacher 1  is Neutral.")
+    else:
+      print("Majority Students feedback on Teacher 1  is Negative.")
         
    
     start_teacher = 1
