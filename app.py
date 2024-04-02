@@ -141,6 +141,36 @@ if csv:
         st.text("Majority Students feedback on Teacher 1  is Neutral.")
     else:
         st.text("Majority Students feedback on Teacher 1  is Negative.")
+    negative_count = df['Sentiments 3'].value_counts().get('negative', 0)
+    positive_count=  df['Sentiments 3'].value_counts().get('positive', 0)
+
+# Check if more than half of the reviews are negative
+    if positive_count > total_reviews / 2:
+        st.text("Majority Students feedback on Teacher 3  is Positive.")
+    elif positive_count==negative_count:
+        st.text("Majority Students feedback on Teacher 3  is Neutral.")
+    else:
+      st.text("Majority Students feedback on Teacher 3  is Negative.")
+    negative_count = df['Sentiments 4'].value_counts().get('negative', 0)
+    positive_count=  df['Sentiments 4'].value_counts().get('positive', 0)
+
+# Check if more than half of the reviews are negative
+    if positive_count > total_reviews / 2:
+        st.text("Majority Students feedback on Teacher 4  is Positive.")
+    elif positive_count==negative_count:
+        st.text("Majority Students feedback on Teacher 4  is Neutral.")
+    else:
+      st.text("Majority Students feedback on Teacher 4  is Negative.")
+    negative_count = df['Sentiments 5'].value_counts().get('negative', 0)
+    positive_count=  df['Sentiments 5'].value_counts().get('positive', 0)
+
+# Check if more than half of the reviews are negative
+    if positive_count > total_reviews / 2:
+        st.text("Majority Students feedback on Teacher 5  is Positive.")
+    elif positive_count==negative_count:
+        st.text("Majority Students feedback on Teacher 5  is Neutral.")
+    else:
+        st.text("Majority Students feedback on Teacher 5  is Negative.")
         
    
     start_teacher = 1
