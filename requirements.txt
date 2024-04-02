@@ -8,3 +8,4 @@ svm
 sentence_transformers
 textblob
 wordcloud
+xgboost
