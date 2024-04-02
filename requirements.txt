@@ -7,3 +7,4 @@ nltk
 svm
 sentence_transformers
 textblob
+wordcloud
