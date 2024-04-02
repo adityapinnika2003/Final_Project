@@ -76,7 +76,7 @@ df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
 df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
- st.text(df['Sentiment_Scores 1'])
+st.text(df['Sentiment_Scores 1'])
 
 sns.histplot(df['Sentiment_Scores 1'])
 plt.title('Distribution of sentiment scores of Teacher 1')
@@ -86,7 +86,7 @@ plt.show()
 df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
- st.text(df['Sentiment_Scores 2'])
+st.text(df['Sentiment_Scores 2'])
 
 sns.histplot(df['Sentiment_Scores 2'])
 plt.title('Distribution of sentiment scores of Teacher 2')
@@ -96,7 +96,7 @@ plt.show()
 df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
- st.text(df['Sentiment_Scores 3'])
+st.text(df['Sentiment_Scores 3'])
 
 sns.histplot(df['Sentiment_Scores 3'])
 plt.title('Distribution of sentiment scores of Teacher 3')
@@ -106,7 +106,7 @@ plt.show()
 df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
- st.text(df['Sentiment_Scores 4'])
+st.text(df['Sentiment_Scores 4'])
 
 sns.histplot(df['Sentiment_Scores 4'])
 plt.title('Distribution of sentiment scores of Teacher 4')
@@ -116,7 +116,7 @@ plt.show()
 df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
 
 #print(df['Sentiment_Scores'].describe())
- st.text(df['Sentiment_Scores 5'])
+st.text(df['Sentiment_Scores 5'])
 
 sns.histplot(df['Sentiment_Scores 5'])
 plt.title('Distribution of sentiment scores of Teacher 5')
