@@ -123,51 +123,51 @@ if st.button('                                      Analyze                     
     
     # Check if more than half of the reviews are negative
         if positive_count > total_reviews / 2:
-            st.text("Majority Students feedback on Teacher 1  is Positive.")
+            st.text("Majority Students feedback on"+df.columns[4]+"is Positive")
         elif positive_count==negative_count:
-            st.text("Majority Students feedback on Teacher 1  is Neutral.")
+            st.text("Majority Students feedback on"+df.columns[4]+"is Neutral")
         else:
-            st.text("Majority Students feedback on Teacher 1  is Negative.")
+            st.text("Majority Students feedback on"+df.columns[4]+"is Negative")
         negative_count = df['Sentiments 2'].value_counts().get('negative', 0)
         positive_count=  df['Sentiments 2'].value_counts().get('positive', 0)
     
     # Check if more than half of the reviews are negative
         if positive_count > total_reviews / 2:
-            st.text("Majority Students feedback on Teacher 2  is Positive.")
+            st.text("Majority Students feedback on"+df.columns[6]+"is Positive")
         elif positive_count==negative_count:
-            st.text("Majority Students feedback on Teacher 2  is Neutral.")
+            st.text("Majority Students feedback on"+df.columns[6]+"is Neutral")
         else:
-          st.text("Majority Students feedback on Teacher 2  is Negative.")
+          st.text("Majority Students feedback on"+df.columns[6]+"is Negative")
         negative_count = df['Sentiments 3'].value_counts().get('negative', 0)
         positive_count=  df['Sentiments 3'].value_counts().get('positive', 0)
     
     # Check if more than half of the reviews are negative
         if positive_count > total_reviews / 2:
-            st.text("Majority Students feedback on Teacher 3  is Positive.")
+            st.text("Majority Students feedback on"+df.columns[8]+"is Positive")
         elif positive_count==negative_count:
-            st.text("Majority Students feedback on Teacher 3  is Neutral.")
+            st.text("Majority Students feedback on"+df.columns[8]+"is Neutral")
         else:
-          st.text("Majority Students feedback on Teacher 3  is Negative.")
+          st.text("Majority Students feedback on"+df.columns[8]+"is Negative")
         negative_count = df['Sentiments 4'].value_counts().get('negative', 0)
         positive_count=  df['Sentiments 4'].value_counts().get('positive', 0)
     
     # Check if more than half of the reviews are negative
         if positive_count > total_reviews / 2:
-            st.text("Majority Students feedback on Teacher 4  is Positive.")
+            st.text("Majority Students feedback on"+df.columns[10]+"is Positive")
         elif positive_count==negative_count:
-            st.text("Majority Students feedback on Teacher 4  is Neutral.")
+            st.text("Majority Students feedback on"+df.columns[10]+"is Neutral")
         else:
-          st.text("Majority Students feedback on Teacher 4  is Negative.")
+          st.text("Majority Students feedback on"+df.columns[10]+"is Negative")
         negative_count = df['Sentiments 5'].value_counts().get('negative', 0)
         positive_count=  df['Sentiments 5'].value_counts().get('positive', 0)
     
     # Check if more than half of the reviews are negative
         if positive_count > total_reviews / 2:
-            st.text("Majority Students feedback on Teacher 5  is Positive.")
+            st.text("Majority Students feedback on"+df.columns[12]+"is Positive")
         elif positive_count==negative_count:
-            st.text("Majority Students feedback on Teacher 5  is Neutral.")
+            st.text("Majority Students feedback on"+df.columns[12]+"is Neutral")
         else:
-            st.text("Majority Students feedback on Teacher 5  is Negative.")
+            st.text("Majority Students feedback on"+df.columns[12]+"is Negative")
             
         st.header('Summary of Feedback for Teachers')
         #start_teacher = 1
