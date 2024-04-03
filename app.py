@@ -94,11 +94,11 @@ if st.button('                                      Analyze                     
         df['Processed_Feedback 3'] = df[8].apply(preprocess_text)
         df['Processed_Feedback 4'] = df[10].apply(preprocess_text)
         df['Processed_Feedback 5'] = df[12].apply(preprocess_text)
-        df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
-        df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
-        df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
-        df['Sentiment_Scores 4'] = df['Processed_Feedback 4'].apply(lambda x: TextBlob(x).sentiment.polarity)
-        df['Sentiment_Scores 5'] = df['Processed_Feedback 5'].apply(lambda x: TextBlob(x).sentiment.polarity)
+        df['Processed_Feedback 1'] = df[df.columns[4]].apply(preprocess_text)
+        df['Processed_Feedback 2'] = df[df.columns[6]].apply(preprocess_text)
+        df['Processed_Feedback 3'] = df[df.columns[8]].apply(preprocess_text)
+        df['Processed_Feedback 4'] = df[df.columns[10]].apply(preprocess_text)
+        df['Processed_Feedback 5'] = df[df.columns[12]].apply(preprocess_text)
         st.header('Feedback on Teachers: Positive/ Negative/Neutral')
     
         def sentiment_analyzer(score):
