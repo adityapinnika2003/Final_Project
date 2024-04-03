@@ -104,11 +104,11 @@ if st.button('                                      Analyze                     
         # Join tokens back into a single string
             return ' '.join(tokens)
     
-        df['Processed_Feedback 1'] = df.columns[4].apply(preprocess_text)
-        df['Processed_Feedback 2'] = df.columns[6].apply(preprocess_text)
-        df['Processed_Feedback 3'] = df.columns[8].apply(preprocess_text)
-        df['Processed_Feedback 4'] = df.columns[10].apply(preprocess_text)
-        df['Processed_Feedback 5'] = df.columns[12].apply(preprocess_text)
+        df['Processed_Feedback 1'] = df[4].apply(preprocess_text)
+        df['Processed_Feedback 2'] = df[6].apply(preprocess_text)
+        df['Processed_Feedback 3'] = df[8].apply(preprocess_text)
+        df['Processed_Feedback 4'] = df[10].apply(preprocess_text)
+        df['Processed_Feedback 5'] = df[12].apply(preprocess_text)
         df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
@@ -191,7 +191,7 @@ if st.button('                                      Analyze                     
             #st.text(i)
             if i in df.columns and not df[i].isnull().all():
                 teacher_feedback = df[i].dropna().str.cat(sep=' ')
-                st.text("Summary of feedback for :"+i)
+                st.text("Summary of feedback for:"+i)
                 st.text(generate_summary(teacher_feedback))
 
             else:
