@@ -104,11 +104,11 @@ if st.button('                                      Analyze                     
         # Join tokens back into a single string
             return ' '.join(tokens)
     
-        df['Processed_Feedback 1'] = df["Teacher 1"].apply(preprocess_text)
-        df['Processed_Feedback 2'] = df["Teacher 2"].apply(preprocess_text)
-        df['Processed_Feedback 3'] = df["Teacher 3"].apply(preprocess_text)
-        df['Processed_Feedback 4'] = df["Teacher 4"].apply(preprocess_text)
-        df['Processed_Feedback 5'] = df["Teacher 5"].apply(preprocess_text)
+        df['Processed_Feedback 1'] = df.columns[4].apply(preprocess_text)
+        df['Processed_Feedback 2'] = df.columns[6].apply(preprocess_text)
+        df['Processed_Feedback 3'] = df.columns[8].apply(preprocess_text)
+        df['Processed_Feedback 4'] = df.columns[10].apply(preprocess_text)
+        df['Processed_Feedback 5'] = df.columns[12].apply(preprocess_text)
         df['Sentiment_Scores 1'] = df['Processed_Feedback 1'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 2'] = df['Processed_Feedback 2'].apply(lambda x: TextBlob(x).sentiment.polarity)
         df['Sentiment_Scores 3'] = df['Processed_Feedback 3'].apply(lambda x: TextBlob(x).sentiment.polarity)
