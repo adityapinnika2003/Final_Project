@@ -184,14 +184,15 @@ if st.button('                                      Analyze                     
             st.text("Majority Students feedback on Teacher 5  is Negative.")
             
         st.header('Summary of Feedback for Teachers')
-        start_teacher = 1
-        end_teacher = 5  # Adjust as needed
+        #start_teacher = 1
+        #end_teacher = 5  # Adjust as needed
         # Generate summary for each teacher in the specified range
-        for i in range(start_teacher, end_teacher + 1):
-            if 'Teacher '+str(i) in df.columns and not df['Teacher '+str(i)].isnull().all():
-                teacher_feedback = df['Teacher '+str(i)].dropna().str.cat(sep=' ')
-                st.text("Summary of feedback for :"+'Teacher '+str(i))
+        for i in df.columns[4],df.columns[6],df.columns[8],df.columns[10],df.columns[12]:
+            #st.text(i)
+            if i in df.columns and not df[i].isnull().all():
+                teacher_feedback = df[i].dropna().str.cat(sep=' ')
+                st.text("Summary of feedback for :"+i)
                 st.text(generate_summary(teacher_feedback))
-    
+
             else:
-                st.text("No feedback available for Teacher"+str(i))
+                st.text("No feedback available for Teacher"+i)
