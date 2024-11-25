@@ -1,30 +1,29 @@
+import nltk
 import streamlit as st
 import pandas as pd
 from nltk.tokenize import sent_tokenize
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-import nltk
-nltk.download('punkt')
-import pandas as pd
-import numpy as np
-import seaborn as sns
-import matplotlib.pyplot as plt
-sns.set_theme(style='white')
-import nltk
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
 import re
 import string
-import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-from nltk.sentiment import SentimentIntensityAnalyzer
 from textblob import TextBlob
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+from wordcloud import WordCloud, STOPWORDS
 import warnings
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# NLTK Downloads
+nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+# Suppress warnings
 warnings.filterwarnings('ignore')
+
+sns.set_theme(style='white')
 
 def generate_summary(teacher_feedback):
     # Tokenize the feedback into sentences
