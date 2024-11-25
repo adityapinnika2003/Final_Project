@@ -3,7 +3,7 @@ streamlit
 numpy
 seaborn
 matplotlib
-nltk
+nltk>=3.8.1
 sentence_transformers
 textblob
 wordcloud
